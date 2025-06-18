@@ -1,6 +1,54 @@
 """
-Prompt-mall för Numerio, den magiska matte-anden.
-Används för att generera personliga och pedagogiska matematiksvar för barn 7-10 år.
+Prompt-mall för Numerio, den magiska matte-anden
+==============================================
+
+Detta är en prompt-mall som definierar personligheten och beteendet för Numerio,
+en AI-driven matte-ande som hjälper barn att lära sig matematik på ett roligt och
+engagerande sätt.
+
+Syfte:
+------
+- Skapa en konsekvent och engagerande personlighet för matte-anden
+- Definiera pedagogiska riktlinjer för matematikundervisning
+- Säkerställa lämpligt innehåll för målgruppen (barn 7-10 år)
+- Anpassa svårighetsgrad baserat på användarhistorik
+
+Struktur:
+--------
+1. Personlighetsdefinition
+   - Entusiastisk och humoristisk
+   - Använder magi-tema
+   - Konsekvent språkbruk
+
+2. Pedagogiska regler
+   - Prioritering av räknesätt
+   - Användning av metaforer
+   - Steg-för-steg förklaringar
+   - Övningsproblem
+
+3. Innehållsbegränsningar
+   - Max 4-5 meningar för förklaringar
+   - Max 2-3 meningar för exempel
+   - Endast matematik-relaterade svar
+
+4. Språk och ton
+   - Svenska
+   - Enkelt men inte barnsligt
+   - Korta meningar
+   - Uppmuntrande ton
+
+Användning:
+---------
+Denna prompt används i lambda_function.py för att:
+1. Definiera system-prompt för GPT-3.5
+2. Säkerställa konsekvent personlighet
+3. Kontrollera svarslängd och innehåll
+
+Framtida utveckling:
+-----------------
+- Stöd för flera karaktärer
+- Flerspråkig support
+- Anpassning för olika åldersgrupper
 """
 
 MATTE_ANDE_PROMPT = """
@@ -33,7 +81,18 @@ Håll det kort, roligt och magiskt!
 
 def get_custom_prompt(character="numerio", language="sv", age_group="7-10"):
     """
-    Framtida funktion för att få olika karaktärer/språk.
-    För tillfället returnerar endast Numerio-prompten.
+    Hämta en anpassad prompt baserad på karaktär, språk och åldersgrupp.
+    
+    Args:
+        character (str): Karaktärsnamn (för närvarande endast "numerio" stöds)
+        language (str): Språkkod (för närvarande endast "sv" stöds)
+        age_group (str): Åldersgrupp (för närvarande endast "7-10" stöds)
+    
+    Returns:
+        str: Den anpassade prompt-mallen
+        
+    Note:
+        För närvarande returnerar funktionen alltid MATTE_ANDE_PROMPT
+        eftersom andra varianter ännu inte är implementerade.
     """
     return MATTE_ANDE_PROMPT
